@@ -7,18 +7,28 @@ export interface Props {
 const { title = 'BAND NAME', subtitle = 'New album out now' } = Astro.props;
 ---
 
-<section class="relative flex h-screen w-full items-center justify-center overflow-hidden">
+<section
+  class="relative flex h-screen w-full items-center justify-center overflow-hidden"
+>
   <img
     src="/images/hero-bg.svg"
     alt="Band hero"
     class="absolute inset-0 h-full w-full object-cover"
+  >
+
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80"
   />
 
-  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80" />
-
   <div class="relative z-10 flex flex-col items-center text-center px-4">
-    <img src="/images/logo.svg" alt="Band logo" class="mb-8 w-64 md:w-80 lg:w-96" />
-    <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white text-shadow">
+    <img
+      src="/images/logo.svg"
+      alt="Band logo"
+      class="mb-8 w-64 md:w-80 lg:w-96"
+    >
+    <h1
+      class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white text-shadow"
+    >
       {title}
     </h1>
     <p class="mt-4 text-lg md:text-xl text-white/80 uppercase tracking-[0.3em]">

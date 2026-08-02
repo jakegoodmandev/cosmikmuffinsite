@@ -1,13 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.tsx';
 import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.tsx';
 import YouTubeEmbed from '../components/YouTubeEmbed.tsx';
 import videos from '../data/videos.json';
+import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 
-<Layout title="Watch — Band Name" description="Watch official music videos and live sessions.">
+<Layout
+  title="Watch — Band Name"
+  description="Watch official music videos and live sessions."
+>
   <Nav client:load />
   <main class="flex-1 py-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">

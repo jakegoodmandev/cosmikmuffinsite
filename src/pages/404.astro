@@ -1,11 +1,14 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.tsx';
 import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.tsx';
+import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 
-<Layout title="Page Not Found — Band Name" description="Sorry, that page could not be found.">
+<Layout
+  title="Page Not Found — Band Name"
+  description="Sorry, that page could not be found."
+>
   <Nav client:load />
   <main class="flex-1 flex items-center justify-center px-4 py-24">
     <div class="text-center">

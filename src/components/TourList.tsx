@@ -1,7 +1,9 @@
 import tourDates from '../data/tour-dates.json';
 
 export default function TourList() {
-  const sortedDates = [...tourDates].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+  const sortedDates = [...tourDates].sort(
+    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+  );
 
   return (
     <div className="space-y-4">

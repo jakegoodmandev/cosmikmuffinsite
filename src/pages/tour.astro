@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.tsx';
 import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.tsx';
 import TourList from '../components/TourList.tsx';
+import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 
@@ -10,9 +10,12 @@ import '../styles/global.css';
   <Nav client:load />
   <main class="flex-1 py-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-black text-white mb-4">Tour Dates</h1>
+      <h1 class="text-4xl md:text-5xl font-black text-white mb-4">
+        Tour Dates
+      </h1>
       <p class="text-white/60 mb-12">
-        Catch us live in a city near you. Tickets available through the venue links.
+        Catch us live in a city near you. Tickets available through the venue
+        links.
       </p>
 
       <TourList client:load />

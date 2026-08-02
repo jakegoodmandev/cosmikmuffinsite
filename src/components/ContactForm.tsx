@@ -15,7 +15,10 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-2">
+        <label
+          htmlFor="name"
+          className="block text-sm font-medium text-white/80 mb-2"
+        >
           Name
         </label>
         <input
@@ -29,7 +32,10 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-white/80 mb-2"
+        >
           Email
         </label>
         <input
@@ -43,7 +49,10 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-2">
+        <label
+          htmlFor="message"
+          className="block text-sm font-medium text-white/80 mb-2"
+        >
           Message
         </label>
         <textarea
@@ -65,7 +74,8 @@ export default function ContactForm() {
 
       {status === 'success' && (
         <p className="text-sm text-green-400 text-center">
-          Thanks for reaching out. (This is a placeholder — connect a form backend to receive real messages.)
+          Thanks for reaching out. (This is a placeholder — connect a form
+          backend to receive real messages.)
         </p>
       )}
     </form>
