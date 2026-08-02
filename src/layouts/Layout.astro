@@ -16,7 +16,7 @@ const { title, description = 'Official website' } = Astro.props;
     <meta name="description" content={description}>
     <title>{title}</title>
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="h-dvh flex flex-col overflow-hidden">
     <slot />
   </body>
 </html>
