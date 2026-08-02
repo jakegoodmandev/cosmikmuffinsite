@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.tsx';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Band Name — Official Website">
+  <Nav client:load />
+  <main class="flex-1">
+    <Hero />
+  </main>
+  <Footer />
+</Layout>

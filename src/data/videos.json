@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Official Music Video",
+    "youtubeId": "dQw4w9WgXcQ",
+    "description": "Our latest single — placeholder until you add the real video."
+  },
+  {
+    "id": "2",
+    "title": "Live Session",
+    "youtubeId": "dQw4w9WgXcQ",
+    "description": "Recorded live in the studio — placeholder."
+  },
+  {
+    "id": "3",
+    "title": "Behind the Scenes",
+    "youtubeId": "dQw4w9WgXcQ",
+    "description": "A look at life on the road — placeholder."
+  }
+]

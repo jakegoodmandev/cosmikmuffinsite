@@ -1,0 +1,29 @@
+---
+const socialLinks = [
+  { label: 'Instagram', href: 'https://instagram.com' },
+  { label: 'YouTube', href: 'https://youtube.com' },
+  { label: 'Spotify', href: 'https://spotify.com' },
+  { label: 'Apple Music', href: 'https://music.apple.com' },
+];
+---
+
+<footer class="border-t border-white/10 bg-black/40 py-8 mt-auto">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    <p class="text-sm text-white/50">
+      © {new Date().getFullYear()} Band Name. All rights reserved.
+    </p>
+
+    <div class="flex items-center gap-6">
+      {socialLinks.map((link) => (
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-white/70 hover:text-band-accent uppercase tracking-wider"
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>

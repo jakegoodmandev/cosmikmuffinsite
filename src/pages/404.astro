@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.tsx';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout title="Page Not Found — Band Name" description="Sorry, that page could not be found.">
+  <Nav client:load />
+  <main class="flex-1 flex items-center justify-center px-4 py-24">
+    <div class="text-center">
+      <h1 class="text-6xl md:text-8xl font-black text-white mb-4">404</h1>
+      <p class="text-xl text-white/60 mb-8">This page is not on the setlist.</p>
+      <a
+        href="/"
+        class="rounded-full bg-band-accent px-8 py-3 text-sm font-bold text-white hover:bg-fuchsia-500"
+      >
+        Back to Home
+      </a>
+    </div>
+  </main>
+  <Footer />
+</Layout>
