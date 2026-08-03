@@ -1,9 +1,9 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 const socialLinks = [
-  { label: 'Instagram', href: 'https://instagram.com' },
-  { label: 'YouTube', href: 'https://youtube.com' },
-  { label: 'Spotify', href: 'https://spotify.com' },
-  { label: 'Apple Music', href: 'https://music.apple.com' },
+  { label: 'Instagram', href: 'https://instagram.com', icon: 'simple-icons:instagram' },
+  { label: 'YouTube', href: 'https://youtube.com', icon: 'simple-icons:youtube' },
 ];
 ---
 
@@ -22,9 +22,10 @@ const socialLinks = [
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-sm text-white/70 hover:text-band-accent uppercase tracking-wider"
+          aria-label={link.label}
+          class="text-white/70 hover:text-band-accent transition-colors"
         >
-          {link.label}
+          <Icon name={link.icon} class="w-6 h-6" />
         </a>
       ))}
     </div>
