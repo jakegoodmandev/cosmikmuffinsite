@@ -1,0 +1,34 @@
+[
+  {
+    "id": "0",
+    "date": "2024-06-20",
+    "venue": "3030 Dundas",
+    "city": "Toronto, ON",
+    "ticketUrl": "https://example.com/tickets/1",
+    "soldOut": false
+  },
+  {
+    "id": "1",
+    "date": "2025-02-15",
+    "venue": "The El Mocambo",
+    "city": "Toronto, ON",
+    "ticketUrl": "https://example.com/tickets/1",
+    "soldOut": false
+  },
+  {
+    "id": "2",
+    "date": "2025-06-05",
+    "venue": "Bovine Sex Club",
+    "city": "Toronto, ON",
+    "ticketUrl": "https://example.com/tickets/2",
+    "soldOut": false
+  },
+  {
+    "id": "3",
+    "date": "2026-12-04",
+    "venue": "Bovine Sex Club",
+    "city": "Toronto, ON",
+    "ticketUrl": "https://example.com/tickets/4",
+    "soldOut": false
+  }
+]

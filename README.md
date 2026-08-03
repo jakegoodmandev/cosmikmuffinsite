@@ -5,7 +5,7 @@ A static band website built with Astro, React, Tailwind CSS, and Bun.
 ## Pages
 
 - **Home** — Full-screen hero with logo and call-to-action links
-- **Tour** — Upcoming show dates sourced from `src/data/tour-dates.json`
+- **Shows** — Upcoming show dates sourced from `src/data/show-dates.json`
 - **Watch** — Embedded YouTube videos sourced from `src/data/videos.json`
 - **Gallery** — Photo grid with lightbox viewer
 - **Contact** — Contact form placeholder
@@ -40,7 +40,7 @@ Connect this repository to your Vercel account. Vercel will build and deploy the
 
 ## Updating Content
 
-- Edit `src/data/tour-dates.json` to add or update show dates.
+- Edit `src/data/show-dates.json` to add or update show dates.
 - Edit `src/data/videos.json` to add or update YouTube videos.
 - Replace placeholder images in `public/images/` with real photos.
 - Replace the placeholder logo in `public/images/logo.svg` with your real logo.

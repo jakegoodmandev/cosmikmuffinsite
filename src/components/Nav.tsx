@@ -8,7 +8,7 @@ function cn(...inputs: ClassValue[]) {
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/tour', label: 'Tour' },
+  { href: '/shows', label: 'Shows' },
   { href: '/watch', label: 'Watch' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
