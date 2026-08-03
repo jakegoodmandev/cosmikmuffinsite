@@ -11,7 +11,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Cooper Black Regular"', 'system-ui', 'sans-serif'],
       },
     },
   },

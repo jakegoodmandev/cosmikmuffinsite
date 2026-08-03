@@ -7,7 +7,6 @@ function cn(...inputs: ClassValue[]) {
 }
 
 const navLinks = [
-  { href: '/', label: 'Home' },
   { href: '/shows', label: 'Shows' },
   { href: '/watch', label: 'Watch' },
   { href: '/gallery', label: 'Gallery' },
@@ -25,7 +24,7 @@ export default function Nav() {
             href="/"
             className="text-xl font-bold tracking-tight text-white hover:text-band-accent"
           >
-            BAND
+            The Cosmik Muffin Experience
           </a>
 
           {/* Desktop links */}
