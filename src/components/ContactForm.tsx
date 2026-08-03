@@ -13,7 +13,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-6">
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4 md:space-y-6">
       <div>
         <label
           htmlFor="name"
@@ -58,7 +58,7 @@ export default function ContactForm() {
         <textarea
           id="message"
           name="message"
-          rows={5}
+          rows={3}
           required
           className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/30 focus:border-band-accent focus:outline-none focus:ring-1 focus:ring-band-accent"
           placeholder="Your message..."

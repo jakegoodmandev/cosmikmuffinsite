@@ -7,16 +7,16 @@ const socialLinks = [
 ];
 ---
 
-<footer class="border-t border-white/10 bg-black/40 py-8 mt-auto">
+<footer class="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-black/40 h-16 flex items-center">
   <div
-    class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6"
+    class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4"
   >
-    <p class="text-sm text-white/50">
+    <p class="text-xs md:text-sm text-white/50">
       © {new Date().getFullYear()} The Cosmik Muffin Experience. All rights
       reserved.
     </p>
 
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-6 flex-shrink-0">
       {socialLinks.map((link) => (
         <a
           href={link.href}
