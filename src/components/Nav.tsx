@@ -9,7 +9,7 @@ function cn(...inputs: ClassValue[]) {
 const navLinks = [
   { href: '/shows', label: 'Shows' },
   { href: '/watch', label: 'Watch' },
-  { href: '/gallery', label: 'Gallery' },
+  // { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ];
 

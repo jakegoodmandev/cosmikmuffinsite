@@ -1,36 +1,55 @@
 ---
-import ContactForm from '../components/ContactForm.tsx';
+import { Icon } from 'astro-icon/components';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.tsx';
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 
-<Layout title="Contact — Band Name" description="Get in touch with the band.">
+<Layout
+  title="Contact — The Cosmik Muffin Experience"
+  description="Get in touch with the band on Instagram."
+>
   <Nav client:load />
-  <main class="flex-1 overflow-hidden pt-16 pb-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto">
-      <h1
-        class="text-4xl md:text-5xl font-black text-white text-center mt-4 mb-4"
-      >
-        Contact
-      </h1>
-      <p class="text-white/60 mb-8 text-center max-w-2xl mx-auto">
-        Booking, press, or just saying hello — drop us a message and we’ll get
-        back to you.
-      </p>
+  <main class="relative flex-1 overflow-y-auto pt-16 pb-16">
+    <img
+      src="/images/hero-bg.jpeg"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover"
+    >
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"
+    />
 
-      <ContactForm client:load />
-
-      <div class="mt-8 text-center">
-        <p class="text-sm text-white/40">
-          Management:
-          <a
-            href="mailto:info@example.com"
-            class="text-white/70 hover:text-band-accent"
-            >info@example.com</a
+    <div
+      class="relative z-10 min-h-full flex items-center justify-center px-4 sm:px-6 lg:px-8"
+    >
+      <div class="max-w-2xl mx-auto w-full">
+        <div
+          class="rounded-3xl border border-white/10 bg-black/50 backdrop-blur-md p-8 md:p-12 text-center shadow-2xl"
+        >
+          <h1
+            class="text-4xl md:text-5xl font-black text-white mt-0 mb-4 text-shadow"
           >
-        </p>
+            Get in Touch
+          </h1>
+          <p class="text-white/70 mb-2 max-w-xl mx-auto text-lg">
+            Booking, press, or just saying hello?
+          </p>
+
+          <a
+            href="https://www.instagram.com/cosmikmuffinexperience/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-3 rounded-full bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-400 px-8 py-4 text-white font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
+          >
+            <Icon
+              name="simple-icons:instagram"
+              class="w-6 h-6 group-hover:rotate-12 transition-transform duration-200"
+            />
+            Message us on Instagram
+          </a>
+        </div>
       </div>
     </div>
   </main>
