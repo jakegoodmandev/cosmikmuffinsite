@@ -7,8 +7,11 @@ test('home renders local artwork and navigates through both hero actions', async
   await expect(
     page.getByRole('heading', { name: 'Best Toronto Zappa Tribute' }),
   ).toBeVisible();
-  for (const name of ['Band hero', 'Band logo']) {
-    const image = page.getByRole('img', { name, exact: true });
+  await expect(
+    page.getByRole('img', { name: 'Band logo', exact: true }),
+  ).toHaveCount(0);
+  for (const name of [/December 4 Bovine Sex Club poster/]) {
+    const image = page.getByRole('img', { name });
     await expect(image).toBeVisible();
     await expect(image).toHaveJSProperty('complete', true);
     expect(
@@ -71,6 +74,67 @@ test('navigation works at the configured viewport size', async ({
     ).toBeVisible();
     await expectNoHorizontalOverflow(page);
   }
+});
+
+test('December 4 Bovine show displays event details and opens its ticket link', async ({
+  page,
+}) => {
+  // Keep the ticket interaction test stable after the event date passes.
+  await page.clock.setFixedTime(new Date('2026-11-16T12:00:00-05:00'));
+  await visit(page, '/shows');
+  const show = page.getByRole('listitem').filter({
+    has: page.getByText('Fri, Dec 4, 2026', { exact: true }),
+  });
+  await expect(
+    show.getByRole('heading', { name: 'Bovine Sex Club', exact: true }),
+  ).toBeVisible();
+  await expect(
+    show.getByText('542 Queen St W, Toronto', { exact: true }),
+  ).toBeVisible();
+  for (const band of [
+    'Hotter Than Heck (KISS)',
+    'Cosmik Muffin Experience (Frank Zappa)',
+    'Dad Sabbath (Black Sabbath)',
+  ]) {
+    await expect(show.getByText(band, { exact: true })).toBeVisible();
+  }
+  await expect(
+    show.getByText('Music at 9 PM · 19+ · Advance tickets $15 + fees', {
+      exact: true,
+    }),
+  ).toBeVisible();
+  const poster = show.getByRole('img', {
+    name: /Tess's December 4 Bovine Sex Club poster/,
+  });
+  await expect(poster).toBeVisible();
+  await expect(poster).toHaveJSProperty('complete', true);
+  expect(
+    await poster.evaluate((image: HTMLImageElement) => image.naturalWidth),
+  ).toBeGreaterThan(0);
+  const posterLink = show.getByRole('link', {
+    name: 'View full-size show poster (opens in a new tab)',
+  });
+  const posterPopupPromise = page.waitForEvent('popup');
+  await posterLink.click();
+  const posterPopup = await posterPopupPromise;
+  await posterPopup.waitForLoadState('domcontentloaded');
+  expect(new URL(posterPopup.url()).pathname).toBe(
+    '/images/bovine-dec-4-2026-poster.jpg',
+  );
+  await expect(posterPopup.locator('img')).toHaveJSProperty('complete', true);
+  await posterPopup.close();
+  const ticketUrl =
+    'https://tixert.com/events/live-tributes-to-black-sabbath-frank-zappa-kiss';
+  const tickets = show.getByRole('link', { name: 'Tickets', exact: true });
+  await expect(tickets).toHaveAttribute('href', ticketUrl);
+  await expect(tickets).toHaveAttribute('rel', /noopener/);
+  const popupPromise = page.waitForEvent('popup');
+  await tickets.click();
+  const popup = await popupPromise;
+  await popup.waitForLoadState('domcontentloaded');
+  expect(popup.url()).toBe(ticketUrl);
+  await popup.close();
+  await expectNoHorizontalOverflow(page);
 });
 
 test('watch exposes titled YouTube embeds without contacting YouTube', async ({
