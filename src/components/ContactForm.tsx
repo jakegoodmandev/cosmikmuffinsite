@@ -13,7 +13,10 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4 md:space-y-6">
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-xl mx-auto space-y-4 md:space-y-6"
+    >
       <div>
         <label
           htmlFor="name"

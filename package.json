@@ -3,17 +3,20 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
+  "packageManager": "bun@1.4.4-canary.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format": "biome format --write .",
-    "lint": "biome lint .",
-    "lint:fix": "biome lint --write .",
-    "check": "biome check --write .",
-    "check:ci": "biome ci ."
+    "dev": "bun --bun astro dev",
+    "start": "bun run dev",
+    "build": "bun --bun astro build",
+    "preview": "bun --bun astro preview",
+    "format": "bun fmt",
+    "format:check": "bun fmt --check",
+    "lint:fix": "bun lint --fix",
+    "check": "bun lint && bun fmt --check",
+    "check:ci": "bun run check",
+    "test:e2e": "bun --bun playwright test",
+    "test:e2e:ui": "bun --bun playwright test --ui",
+    "test:e2e:install": "bun --bun playwright install chromium"
   },
   "dependencies": {
     "@astrojs/react": "^4.0.0",
@@ -30,8 +33,8 @@
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.6",
     "@iconify-json/simple-icons": "^1.2.93",
+    "@playwright/test": "^1.62.1",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "astro-icon": "^1.1.5",
