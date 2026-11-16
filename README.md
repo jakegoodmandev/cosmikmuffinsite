@@ -21,10 +21,20 @@ A static band website built with Astro, React, Tailwind CSS, and Bun.
 
 ## Local Development
 
+Install [mise](https://mise.jdx.dev), then select the project-local Bun canary.
+Stable Bun 1.4.4 does not provide the native lint/format commands used here.
+No Node.js or npm installation is needed for the project commands.
+
 ```sh
+mise install
+mise exec -- bun --revision
 bun install
 bun run dev
 ```
+
+If mise shims are not active in your shell, prefix commands with `mise exec --`.
+`mise.toml` selects canary without changing your global runtime defaults.
+Commit `bun.lock` after dependency changes; do not generate npm lockfiles.
 
 Open [http://localhost:4321](http://localhost:4321) to view the site.
 
@@ -32,11 +42,49 @@ Open [http://localhost:4321](http://localhost:4321) to view the site.
 
 ```sh
 bun run build
+bun run preview
 ```
+
+## Quality Checks
+
+```sh
+bun lint
+bun lint --fix
+bun fmt
+bun run check
+```
+
+Linting and formatting are Bun's native commands, configured in `bunfig.toml`;
+there are no Biome, ESLint, or Prettier dependencies. Astro's dev, build, and
+preview CLIs explicitly run under Bun, including commands with Node shebangs.
+
+**Coverage limits:** native `bun lint` checks JavaScript/TypeScript/JSX, not
+`.astro`, CSS, or HTML. Native `bun fmt` supports JS/TS/JSX, JSON, CSS, HTML,
+Markdown, and TOML, but not `.astro`. Astro templates are compiled during the
+build, not linted/formatted by these commands. Full Astro formatting would
+require an additional formatter/plugin; this project deliberately keeps
+Bun-only tooling instead. Framework dependencies may still use Node-compatible
+APIs and include transitive `@types/node`; these run via Bun's compatibility
+layer and do not require the Node executable.
+
+## Browser Tests
+
+```sh
+bun run test:e2e:install
+bun run test:e2e
+```
+
+Playwright runs under Bun and launches a separate Chromium browser.
 
 ## Deploy
 
-Connect this repository to your Vercel account. Vercel will build and deploy the site automatically on every push to the main branch.
+The build produces a static site in `dist/`, with no Node server or Vercel
+serverless adapter (and no adapter-provided image optimization or automatic
+Web Analytics injection). The existing Speed Insights component still works.
+For Vercel, use install command `bun install --frozen-lockfile`,
+build command `bun run build`, and output directory `dist`. Other static hosts
+work too. Deployment environments must provide Bun; the native lint/format
+checks additionally require canary.
 
 ## Updating Content
 

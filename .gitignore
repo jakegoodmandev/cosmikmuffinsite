@@ -16,3 +16,9 @@ pnpm-debug.log*
 .env.production
 .astro/
 .vercel/
+
+# Playwright browser downloads live in its external cache.
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/

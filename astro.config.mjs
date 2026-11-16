@@ -1,15 +1,10 @@
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
-import vercel from '@astrojs/vercel';
 import { defineConfig } from 'astro/config';
 import icon from 'astro-icon';
 
 export default defineConfig({
   output: 'static',
-  adapter: vercel({
-    imageService: true,
-    webAnalytics: { enabled: true },
-  }),
   integrations: [
     react(),
     tailwind({

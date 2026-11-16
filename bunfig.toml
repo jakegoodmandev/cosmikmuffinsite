@@ -1,0 +1,16 @@
+# Native lint/fmt currently require Bun canary; see mise.toml.
+[run]
+bun = true
+
+[fmt]
+printWidth = 80
+tabWidth = 2
+singleQuote = true
+semi = true
+trailingComma = "all"
+
+[lint.rules]
+"no-unused-vars" = "error"
+"prefer-const" = "error"
+"@typescript-eslint/consistent-type-imports" = "error"
+"@typescript-eslint/no-explicit-any" = "warn"
