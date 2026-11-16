@@ -78,13 +78,15 @@ Playwright runs under Bun and launches a separate Chromium browser.
 
 ## Deploy
 
-The build produces a static site in `dist/`, with no Node server or Vercel
-serverless adapter (and no adapter-provided image optimization or automatic
-Web Analytics injection). The existing Speed Insights component still works.
-For Vercel, use install command `bun install --frozen-lockfile`,
-build command `bun run build`, and output directory `dist`. Other static hosts
-work too. Deployment environments must provide Bun; the native lint/format
-checks additionally require canary.
+The Vercel adapter builds the static site into `.vercel/output/`, with Vercel
+Image Optimization enabled. Web Analytics is included through its Astro
+component; enable Analytics in the Vercel project dashboard to collect visits.
+Speed Insights remains enabled separately. This static site needs no deployed
+Node server, and the adapter's build runs under Bun.
+For Vercel, use install command `bun install --frozen-lockfile` and build command
+`bun run build`; let Vercel consume the adapter's Build Output API output rather
+than overriding the output directory to `dist`. Deployment environments must
+provide Bun; the native lint/format checks additionally require canary.
 
 ## Updating Content
 
