@@ -28,7 +28,20 @@
     "date": "2026-12-04",
     "venue": "Bovine Sex Club",
     "city": "Toronto, ON",
-    "ticketUrl": "https://example.com/tickets/4",
+    "address": "542 Queen St W, Toronto",
+    "lineup": [
+      "Hotter Than Heck (KISS)",
+      "Cosmik Muffin Experience (Frank Zappa)",
+      "Dad Sabbath (Black Sabbath)"
+    ],
+    "details": "Music at 9 PM · 19+ · Advance tickets $15 + fees",
+    "poster": {
+      "src": "/images/bovine-dec-4-2026-poster.jpg",
+      "alt": "Tess's December 4 Bovine Sex Club poster: Hotter Than Heck at 9 PM, Cosmik Muffin Experience at 10 PM, and Dad Sabbath at midnight",
+      "width": 2579,
+      "height": 3296
+    },
+    "ticketUrl": "https://tixert.com/events/live-tributes-to-black-sabbath-frank-zappa-kiss",
     "soldOut": false
   }
 ]

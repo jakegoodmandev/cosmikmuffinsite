@@ -24,7 +24,7 @@ export default function ShowList() {
         return (
           <li
             key={show.id}
-            className="flex flex-col gap-2 py-4 transition-colors hover:bg-white/5 sm:grid sm:grid-cols-[auto_1fr_auto] sm:items-center sm:gap-x-6 sm:py-5"
+            className="flex flex-col gap-2 py-4 transition-colors hover:bg-white/5 sm:grid sm:grid-cols-[auto_1fr_auto] sm:items-start sm:gap-x-6 sm:py-5"
           >
             <p
               className={clsx(
@@ -56,8 +56,36 @@ export default function ShowList() {
                   isPast ? 'text-white/30' : 'text-white/70',
                 )}
               >
-                {show.city}
+                {show.address ?? show.city}
               </p>
+              {show.lineup && (
+                <ul className="space-y-0.5 pt-2 text-sm text-white/80">
+                  {show.lineup.map((band) => (
+                    <li key={band}>{band}</li>
+                  ))}
+                </ul>
+              )}
+              {show.details && (
+                <p className="pt-2 text-sm text-white/70">{show.details}</p>
+              )}
+              {show.poster && (
+                <a
+                  href={show.poster.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View full-size show poster (opens in a new tab)"
+                  className="mt-4 block max-w-56 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-band-accent"
+                >
+                  <img
+                    src={show.poster.src}
+                    alt={show.poster.alt}
+                    width={show.poster.width}
+                    height={show.poster.height}
+                    loading="lazy"
+                    className="h-auto w-full rounded-lg"
+                  />
+                </a>
+              )}
             </div>
 
             <div className="sm:text-right">
